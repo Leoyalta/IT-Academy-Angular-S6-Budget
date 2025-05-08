@@ -2,8 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "angular.json",
-      "use": "@vercel/angular"
+      "src": "dist/budget-angular/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
