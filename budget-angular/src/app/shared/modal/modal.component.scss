@@ -1,0 +1,23 @@
+.modal-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+.modal-text h2 {
+  font-size: 1.3em;
+  font-weight: 900;
+}
+
+p {
+  text-align: center;
+  font-size: 1.1em;
+}
+button {
+  background-color: rgb(184, 192, 192);
+  border-radius: 5px;
+}
+button:hover {
+  background-color: rgb(162, 179, 179);
+}

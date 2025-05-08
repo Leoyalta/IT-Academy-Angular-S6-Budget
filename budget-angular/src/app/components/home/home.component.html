@@ -1,0 +1,74 @@
+<section>
+  <div class="hero">
+    <h1 class="hero-title">Aconsegueix la millor qualitat</h1>
+  </div>
+  <form class="budget-form" [formGroup]="formOptions">
+    <div
+      class="price-box"
+      [ngClass]="{ 'active-box': formOptions.get('seo')?.value }"
+    >
+      <div class="text-box">
+        <p class="text-title">Seo</p>
+        <p class="text-description">
+          Programació d'una web responsive completa
+        </p>
+      </div>
+      <div>
+        <h2>300<span>€</span></h2>
+      </div>
+      <div>
+        <input id="seo" type="checkbox" formControlName="seo" />
+        <label for="seo">Afegir</label>
+      </div>
+    </div>
+
+    <div
+      class="price-box"
+      [ngClass]="{ 'active-box': formOptions.get('ads')?.value }"
+    >
+      <div class="text-box">
+        <p class="text-title">Ads</p>
+        <p class="text-description">
+          Programació d'una web responsive completa
+        </p>
+      </div>
+      <div>
+        <h2>400<span>€</span></h2>
+      </div>
+      <div>
+        <input id="ads" type="checkbox" formControlName="ads" />
+        <label for="ads">Afegir</label>
+      </div>
+    </div>
+
+    <div
+      class="price-box"
+      [ngClass]="{ 'active-box': formOptions.get('web')?.value }"
+    >
+      <div class="text-box">
+        <p class="text-title">Web</p>
+        <p class="text-description">
+          Programació d'una web responsive completa
+        </p>
+      </div>
+      @if (formOptions.get('web')?.value) {
+      <h2>{{ webPrice }}<span>€</span></h2>
+      } @else {
+      <h2>500<span>€</span></h2>
+      }
+      <div>
+        <input id="web" type="checkbox" formControlName="web" />
+        <label for="web">Afegir</label>
+      </div>
+      @if (formOptions.get('web')?.value) {
+      <div class="panel-wrapper">
+        <app-panel (webPriceChange)="updateWebPrice($event)" />
+      </div>
+      }
+    </div>
+  </form>
+
+  <h3 class="final-price-text">
+    Preu pressuposat: <span class="final-price">{{ totalPrice }}€</span>
+  </h3>
+</section>

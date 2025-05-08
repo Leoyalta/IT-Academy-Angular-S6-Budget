@@ -1,0 +1,53 @@
+.panel-form {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+.panel-wrapper {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.info {
+  font-size: 1.3em;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+.info:hover {
+  color: orangered;
+}
+.btns-box {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
+.panel-btn {
+  font-size: 1.6em;
+  font-weight: 600;
+  color: rgb(158, 158, 158);
+}
+
+.increase:hover {
+  color: rgb(95, 178, 95);
+}
+.decrease:hover {
+  color: rgb(225, 151, 151);
+}
+
+.quantity {
+  font-family: monospace;
+  text-align: center;
+
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1, 1;
+
+  padding: 2px 0px;
+  border: 2px solid black;
+  border-radius: 8px;
+
+  width: 40px;
+}

@@ -1,0 +1,35 @@
+<form class="panel-form" [formGroup]="webForm">
+  <div class="panel-wrapper">
+    <div>
+      <p>
+        <span class="info" (click)="openModal()">ⓘ</span> Nombre de pagines:
+      </p>
+    </div>
+    <div class="btns-box">
+      <button class="panel-btn decrease" (click)="decrement('numOfPages')">
+        ⊖
+      </button>
+      <input class="quantity" type="text" formControlName="numOfPages" />
+      <button class="panel-btn increase" (click)="increment('numOfPages')">
+        ⊕
+      </button>
+    </div>
+  </div>
+
+  <div class="panel-wrapper">
+    <div>
+      <p>
+        <span class="info" (click)="openModal()">ⓘ</span> Nombre de llenguatges:
+      </p>
+    </div>
+    <div class="btns-box">
+      <button class="panel-btn decrease" (click)="decrement('numOfLangs')">
+        ⊖
+      </button>
+      <input class="quantity" type="text" formControlName="numOfLangs" />
+      <button class="panel-btn increase" (click)="increment('numOfLangs')">
+        ⊕
+      </button>
+    </div>
+  </div>
+</form>
