@@ -6,13 +6,9 @@
       </p>
     </div>
     <div class="btns-box">
-      <button class="panel-btn decrease" (click)="decrement('numOfPages')">
-        ⊖
-      </button>
-      <input class="quantity" type="text" formControlName="numOfPages" />
-      <button class="panel-btn increase" (click)="increment('numOfPages')">
-        ⊕
-      </button>
+      <button class="panel-btn decrease" (click)="decrement('pages')">⊖</button>
+      <input class="quantity" type="text" formControlName="pages" />
+      <button class="panel-btn increase" (click)="increment('pages')">⊕</button>
     </div>
   </div>
 
@@ -23,11 +19,11 @@
       </p>
     </div>
     <div class="btns-box">
-      <button class="panel-btn decrease" (click)="decrement('numOfLangs')">
+      <button class="panel-btn decrease" (click)="decrement('languages')">
         ⊖
       </button>
-      <input class="quantity" type="text" formControlName="numOfLangs" />
-      <button class="panel-btn increase" (click)="increment('numOfLangs')">
+      <input class="quantity" type="text" formControlName="languages" />
+      <button class="panel-btn increase" (click)="increment('languages')">
         ⊕
       </button>
     </div>

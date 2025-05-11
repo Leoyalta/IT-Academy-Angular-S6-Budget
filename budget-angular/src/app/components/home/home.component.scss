@@ -1,3 +1,12 @@
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 2vw;
+  padding: 1vw;
+  box-sizing: border-box;
+}
 .hero {
   margin: 0 auto;
   padding: 2vw 4vw;
@@ -44,6 +53,7 @@
 }
 .final-price-text {
   text-align: end;
+  margin: 2vw;
 }
 .final-price {
   font-size: 1.6em;
@@ -62,4 +72,84 @@ input[type="checkbox"] {
 }
 .active-box {
   border: 3px solid rgb(95, 178, 95);
+}
+
+.user-budget-section {
+  display: flex;
+  justify-content: center;
+  padding: 2vw;
+}
+
+.user-form {
+  width: 100%;
+  max-width: 1000px;
+  padding: 2vw;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.user-content-box {
+  width: 100%;
+}
+
+.user-budget-title {
+  font-size: x-large;
+  margin-bottom: 1vw;
+  color: cadetblue;
+}
+
+.fields-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.input-box {
+  flex: 1 1 20%;
+  min-width: 200px;
+  padding-bottom: 24px;
+}
+
+.user-input {
+  border: 2px solid rgb(172, 173, 173);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.error-message {
+  font-size: 1rem;
+  color: rgb(254, 88, 88);
+  line-height: 1.2;
+  pointer-events: none;
+  max-width: 100%;
+}
+
+.submit-button {
+  flex: 1 1 20%;
+  background-color: rgb(95, 178, 95);
+  color: white;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  min-width: 200px;
+}
+
+.submit-button:hover {
+  background-color: rgb(62, 138, 62);
+}
+
+.submit-button[disabled] {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
