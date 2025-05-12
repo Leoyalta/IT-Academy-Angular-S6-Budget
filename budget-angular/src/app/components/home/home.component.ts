@@ -15,8 +15,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
-import { BudgetsListComponent } from '../budgets-list/budgets-list.component';
-
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -25,7 +23,6 @@ import { BudgetsListComponent } from '../budgets-list/budgets-list.component';
     ReactiveFormsModule,
     PanelComponent,
     MatSnackBarModule,
-    BudgetsListComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

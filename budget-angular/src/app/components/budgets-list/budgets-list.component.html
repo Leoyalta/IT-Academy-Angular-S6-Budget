@@ -1,6 +1,36 @@
 <div class="page-wrapper">
   <section class="budgets-list-section">
-    <h2>Pressupostos en curs:</h2>
+    <div class="press-wrapper">
+      <h2 class="budgets-list-title">Pressupostos en curs:</h2>
+      <div class="filtere-box">
+        <input
+          class="serch-input"
+          type="text"
+          placeholder="🔎"
+          (input)="searchByName($event)"
+        />
+        <div class="btns-box">
+          <button
+            class="data-filter-btn filter-btn"
+            (click)="orderBudgets('date')"
+          >
+            Data
+          </button>
+          <button
+            class="price-filter-btn filter-btn"
+            (click)="orderBudgets('price')"
+          >
+            Import
+          </button>
+          <button
+            class="name-filter-btn filter-btn"
+            (click)="orderBudgets('name')"
+          >
+            Nom
+          </button>
+        </div>
+      </div>
+    </div>
     @for (b of budgetHistory(); track b.id) {
     <div class="budget-list-box">
       <ul class="cart-list">
