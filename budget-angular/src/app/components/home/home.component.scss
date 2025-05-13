@@ -51,7 +51,12 @@
   grid-column: 2;
   grid-row: 2;
 }
-
+.checkbox-input-wrapper {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
 input[type="checkbox"] {
   width: 16px;
   height: 16px;
