@@ -1,67 +1,76 @@
-<div class="page-wrapper">
-  <section class="budgets-list-section">
-    <div class="press-wrapper">
-      <h2 class="budgets-list-title">Pressupostos en curs:</h2>
-      <div class="filtere-box">
-        <input
-          class="serch-input"
-          type="text"
-          placeholder="🔎"
-          (input)="searchByName($event)"
-        />
-        <div class="btns-box">
-          <button
-            class="data-filter-btn filter-btn"
-            (click)="orderBudgets('date')"
-          >
-            Data
-          </button>
-          <button
-            class="price-filter-btn filter-btn"
-            (click)="orderBudgets('price')"
-          >
-            Import
-          </button>
-          <button
-            class="name-filter-btn filter-btn"
-            (click)="orderBudgets('name')"
-          >
-            Nom
+<div class="layout-wrapper">
+  <div class="layout-content">
+    <div class="page-wrapper">
+      <section class="budgets-list-section">
+        <div class="press-wrapper">
+          <h2 class="budgets-list-title">Pressupostos en curs:</h2>
+          <div class="filtere-box">
+            <input
+              class="serch-input"
+              type="text"
+              placeholder="🔎"
+              (input)="searchByName($event)"
+            />
+            <div class="btns-box">
+              <button
+                class="data-filter-btn filter-btn"
+                (click)="orderBudgets('date')"
+              >
+                Data
+              </button>
+              <button
+                class="price-filter-btn filter-btn"
+                (click)="orderBudgets('price')"
+              >
+                Import
+              </button>
+              <button
+                class="name-filter-btn filter-btn"
+                (click)="orderBudgets('name')"
+              >
+                Nom
+              </button>
+            </div>
+          </div>
+        </div>
+        @for (b of budgetHistory(); track b.id) {
+        <div class="budget-list-box">
+          <ul class="cart-list">
+            <li>
+              <h2 class="user-name">{{ b.name }}</h2>
+              <p class="user-info">{{ b.email }}</p>
+              <p class="user-info">{{ b.phone }}</p>
+            </li>
+            <li>
+              <strong>Serveis contractats:</strong>
+              <ul class="web-list">
+                @if (b.services.web) {
+                <li>
+                  Web ({{ b.services.web.pages }} pàgines,
+                  {{ b.services.web.languages }} llenguatges)
+                </li>
+                } @if (b.services.seo) {
+                <li>SEO</li>
+                } @if (b.services.ads) {
+                <li>Publicitat</li>
+                }
+              </ul>
+            </li>
+            <li>
+              <strong class="user-info">Total:</strong>
+              <p class="user-total-budget">
+                {{ b.budget }} <span class="user-total-sapn">€</span>
+              </p>
+            </li>
+          </ul>
+          <button class="ditails-btn" [routerLink]="['/budget', b.id]">
+            Veure detalls →
           </button>
         </div>
-      </div>
+        } @empty {
+        <p>No hi ha pressupostos encara</p>
+        }
+      </section>
     </div>
-    @for (b of budgetHistory(); track b.id) {
-    <div class="budget-list-box">
-      <ul class="cart-list">
-        <li>
-          <h2>{{ b.name }}</h2>
-          <p>{{ b.email }}</p>
-          <p>{{ b.phone }}</p>
-        </li>
-        <li>
-          <strong>Serveis contractats:</strong>
-          <ul class="web-list">
-            @if (b.services.web) {
-            <li>
-              Web ({{ b.services.web.pages }} pàgines,
-              {{ b.services.web.languages }} llenguatges)
-            </li>
-            } @if (b.services.seo) {
-            <li>SEO</li>
-            } @if (b.services.ads) {
-            <li>Publicitat</li>
-            }
-          </ul>
-        </li>
-        <li>
-          <strong>Total:</strong>
-          <p>{{ b.budget }}</p>
-        </li>
-      </ul>
-    </div>
-    } @empty {
-    <p>No hi ha pressupostos encara</p>
-    }
-  </section>
+  </div>
 </div>

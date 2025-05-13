@@ -2,11 +2,12 @@ import { Component, Signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BudgetService } from '../../services/budget.service';
 import { ClientDataInt } from '../../models/budget.interface';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-budgets-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './budgets-list.component.html',
   styleUrl: './budgets-list.component.scss',
 })

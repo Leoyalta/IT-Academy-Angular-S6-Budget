@@ -1,0 +1,31 @@
+<div class="layout-wrapper">
+  @if (budget) {
+  <section class="client-cart">
+    <h2 class="client-title">Pressupost de {{ budget.name }}</h2>
+    <div class="client-info">
+      <p><strong>Email:</strong> {{ budget.email }}</p>
+      <p><strong>Telèfon:</strong> {{ budget.phone }}</p>
+      <p><strong>Data:</strong> {{ budget.exactTime }}</p>
+      <p><strong>Total:</strong> {{ budget.budget }}€</p>
+    </div>
+
+    <div class="client-services">
+      <p class="service-label"><strong>Serveis contractats:</strong></p>
+      <ul class="service-list">
+        @if (budget.services.web) {
+        <li>
+          Web ({{ budget.services.web.pages }} pàgines,
+          {{ budget.services.web.languages }} llenguatges)
+        </li>
+        } @if (budget.services.seo) {
+        <li>SEO</li>
+        } @if (budget.services.ads) {
+        <li>Publicitat</li>
+        }
+      </ul>
+    </div>
+  </section>
+  } @else {
+  <p class="not-found-text">No s'ha trobat el pressupost.</p>
+  }
+</div>

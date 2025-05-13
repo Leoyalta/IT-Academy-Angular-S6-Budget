@@ -6,6 +6,19 @@ export class BudgetService {
   private readonly _budgets = signal<ClientDataInt[]>([]);
   private readonly _originalBudgets = signal<ClientDataInt[]>([]);
 
+  constructor() {
+    const saved = localStorage.getItem('budgets');
+    if (saved) {
+      try {
+        const parsed: ClientDataInt[] = JSON.parse(saved);
+        this._budgets.set(parsed);
+        this._originalBudgets.set(parsed);
+      } catch {
+        console.warn('Failed to parse saved budgets.');
+      }
+    }
+  }
+
   get budgets() {
     return this._budgets.asReadonly();
   }
@@ -18,6 +31,7 @@ export class BudgetService {
     this._budgets.update((prev) => {
       const updated = [...prev, budget];
       this._originalBudgets.set(updated);
+      localStorage.setItem('budgets', JSON.stringify(updated));
       return updated;
     });
   }
@@ -29,7 +43,6 @@ export class BudgetService {
   sortBudgets(by: 'date' | 'price' | 'name') {
     this._budgets.update((prev) => {
       const sorted = [...prev];
-
       switch (by) {
         case 'date':
           return sorted.sort(
@@ -45,11 +58,12 @@ export class BudgetService {
       }
     });
   }
+
   filterBudgetsByName(searchTerm: string) {
     const term = searchTerm.trim().toLowerCase();
 
     if (!term) {
-      this._budgets.set(this._originalBudgets()); // скидання до початкового
+      this._budgets.set(this._originalBudgets());
       return;
     }
 
@@ -58,5 +72,11 @@ export class BudgetService {
     );
 
     this._budgets.set(filtered);
+  }
+
+  clearBudgets(): void {
+    this._budgets.set([]);
+    this._originalBudgets.set([]);
+    localStorage.removeItem('budgets');
   }
 }

@@ -1,8 +1,11 @@
-<nav>
-  <a routerLink="/home" routerLinkActive="active">Home </a>
-  <a routerLink="/budgetList" routerLinkActive="active">BudgetList</a>
-  <a routerLink="/clientBudget" routerLinkActive="active">ClientBudget</a>
-</nav>
-<main>
-  <router-outlet></router-outlet>
-</main>
+<div class="layout-wrapper">
+  <nav>
+    <a routerLink="/wellcome" routerLinkActive="active">Wellcome</a>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/budgetList" routerLinkActive="active">Budget List</a>
+  </nav>
+
+  <main class="layout-content">
+    <router-outlet />
+  </main>
+</div>

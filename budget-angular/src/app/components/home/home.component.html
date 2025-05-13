@@ -1,138 +1,140 @@
-<div class="page-wrapper">
-  <section class="budget-count-section">
-    <div class="hero">
-      <h1 class="hero-title">Aconsegueix la millor qualitat</h1>
-    </div>
-    <form class="budget-form" [formGroup]="formOptions">
-      <div
-        class="price-box"
-        [ngClass]="{ 'active-box': formOptions.get('seo')?.value }"
-      >
-        <div class="text-box">
-          <p class="text-title">Seo</p>
-          <p class="text-description">
-            Programació d'una web responsive completa
-          </p>
-        </div>
-        <div>
-          <h2>300<span>€</span></h2>
-        </div>
-        <div>
-          <input id="seo" type="checkbox" formControlName="seo" />
-          <label for="seo">Afegir</label>
-        </div>
+<div class="layout-wrapper">
+  <div class="layout-content">
+    <section class="budget-count-section">
+      <div class="hero">
+        <h1 class="hero-title">Aconsegueix la millor qualitat</h1>
       </div>
-
-      <div
-        class="price-box"
-        [ngClass]="{ 'active-box': formOptions.get('ads')?.value }"
-      >
-        <div class="text-box">
-          <p class="text-title">Ads</p>
-          <p class="text-description">
-            Programació d'una web responsive completa
-          </p>
-        </div>
-        <div>
-          <h2>400<span>€</span></h2>
-        </div>
-        <div>
-          <input id="ads" type="checkbox" formControlName="ads" />
-          <label for="ads">Afegir</label>
-        </div>
-      </div>
-
-      <div
-        class="price-box"
-        [ngClass]="{ 'active-box': formOptions.get('web')?.value }"
-      >
-        <div class="text-box">
-          <p class="text-title">Web</p>
-          <p class="text-description">
-            Programació d'una web responsive completa
-          </p>
-        </div>
-        @if (formOptions.get('web')?.value) {
-        <h2>{{ webPrice }}<span>€</span></h2>
-        } @else {
-        <h2>500<span>€</span></h2>
-        }
-        <div>
-          <input id="web" type="checkbox" formControlName="web" />
-          <label for="web">Afegir</label>
-        </div>
-        @if (formOptions.get('web')?.value) {
-        <div class="panel-wrapper">
-          <app-panel
-            (webPriceChange)="updateWebPrice($event)"
-            (webDetailsChange)="updateWebDetails($event)"
-          />
-        </div>
-        }
-      </div>
-    </form>
-
-    <h3 class="final-price-text">
-      Preu pressuposat: <span class="final-price">{{ totalPrice }}€</span>
-    </h3>
-  </section>
-
-  <section class="user-budget-section">
-    <form class="user-form" [formGroup]="userData">
-      <div class="user-content-box">
-        <h3 class="user-budget-title">Demanar pressupost</h3>
-        <div class="fields-wrapper">
-          <div class="input-box">
-            <input
-              class="user-input"
-              type="text"
-              formControlName="userName"
-              placeholder="Nom"
-            />
-            @if (userName?.invalid && userName?.touched) {
-            <p class="error-message">
-              El nom és obligatori i ha de tenir més de 2 lletres.”
+      <form class="budget-form" [formGroup]="formOptions">
+        <div
+          class="price-box"
+          [ngClass]="{ 'active-box': formOptions.get('seo')?.value }"
+        >
+          <div class="text-box">
+            <p class="text-title">Seo</p>
+            <p class="text-description">
+              Programació d'una web responsive completa
             </p>
-
-            }
           </div>
-          <div class="input-box">
-            <input
-              class="user-input"
-              type="text"
-              formControlName="userPhone"
-              placeholder="Telefon"
-            />
-            @if (userPhone?.invalid && userPhone?.touched) {
-            <p class="error-message">
-              El telèfon és obligatori i ha de ser vàlid.
-            </p>
-            }
+          <div>
+            <h2>300<span>€</span></h2>
           </div>
-          <div class="input-box">
-            <input
-              class="user-input"
-              type="text"
-              formControlName="userEmail"
-              placeholder="Email"
-            />
-            @if (userEmail?.invalid && userEmail?.touched) {
-            <p class="error-message">
-              El correu electrònic és obligatori i ha de ser vàlid.
-            </p>
-            }
+          <div>
+            <input id="seo" type="checkbox" formControlName="seo" />
+            <label for="seo">Afegir</label>
           </div>
-
-          <button
-            class="submit-button"
-            type="submit"
-            [disabled]="!userData.valid || !isAnyOptionSelected()"
-            (click)="onDataSubmit()"
-          >
-            Sol-licitar →
-          </button>
         </div>
-      </div>
-    </form>
-  </section>
+
+        <div
+          class="price-box"
+          [ngClass]="{ 'active-box': formOptions.get('ads')?.value }"
+        >
+          <div class="text-box">
+            <p class="text-title">Ads</p>
+            <p class="text-description">
+              Programació d'una web responsive completa
+            </p>
+          </div>
+          <div>
+            <h2>400<span>€</span></h2>
+          </div>
+          <div>
+            <input id="ads" type="checkbox" formControlName="ads" />
+            <label for="ads">Afegir</label>
+          </div>
+        </div>
+
+        <div
+          class="price-box"
+          [ngClass]="{ 'active-box': formOptions.get('web')?.value }"
+        >
+          <div class="text-box">
+            <p class="text-title">Web</p>
+            <p class="text-description">
+              Programació d'una web responsive completa
+            </p>
+          </div>
+          @if (formOptions.get('web')?.value) {
+          <h2>{{ webPrice }}<span>€</span></h2>
+          } @else {
+          <h2>500<span>€</span></h2>
+          }
+          <div>
+            <input id="web" type="checkbox" formControlName="web" />
+            <label for="web">Afegir</label>
+          </div>
+          @if (formOptions.get('web')?.value) {
+          <div class="panel-wrapper">
+            <app-panel
+              (webPriceChange)="updateWebPrice($event)"
+              (webDetailsChange)="updateWebDetails($event)"
+            />
+          </div>
+          }
+        </div>
+      </form>
+
+      <h3 class="final-price-text">
+        Preu pressuposat: <span class="final-price">{{ totalPrice }}€</span>
+      </h3>
+    </section>
+
+    <section class="user-budget-section">
+      <form class="user-form" [formGroup]="userData">
+        <div class="user-content-box">
+          <h3 class="user-budget-title">Demanar pressupost</h3>
+          <div class="fields-wrapper">
+            <div class="input-box">
+              <input
+                class="user-input"
+                type="text"
+                formControlName="userName"
+                placeholder="Nom"
+              />
+              @if (userName?.invalid && userName?.touched) {
+              <p class="error-message">
+                El nom és obligatori i ha de tenir més de 2 lletres.”
+              </p>
+
+              }
+            </div>
+            <div class="input-box">
+              <input
+                class="user-input"
+                type="text"
+                formControlName="userPhone"
+                placeholder="Telefon"
+              />
+              @if (userPhone?.invalid && userPhone?.touched) {
+              <p class="error-message">
+                El telèfon és obligatori i ha de ser vàlid.
+              </p>
+              }
+            </div>
+            <div class="input-box">
+              <input
+                class="user-input"
+                type="text"
+                formControlName="userEmail"
+                placeholder="Email"
+              />
+              @if (userEmail?.invalid && userEmail?.touched) {
+              <p class="error-message">
+                El correu electrònic és obligatori i ha de ser vàlid.
+              </p>
+              }
+            </div>
+
+            <button
+              class="submit-button"
+              type="submit"
+              [disabled]="!userData.valid || !isAnyOptionSelected()"
+              (click)="onDataSubmit()"
+            >
+              Sol-licitar →
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
 </div>

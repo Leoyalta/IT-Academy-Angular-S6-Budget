@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   padding: 2vw;
+  max-height: 95vh;
 }
 .budgets-list-section {
   display: flex;
@@ -28,6 +29,14 @@
   justify-content: space-around;
   gap: 2vw;
 }
+.user-name {
+  font-size: 28px;
+}
+.user-info {
+  font-weight: 700;
+  font-size: 18px;
+  color: darkgray;
+}
 .web-list {
 }
 
@@ -37,6 +46,14 @@
 }
 .budgets-list-title {
   display: block;
+}
+.user-total-budget {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+.user-total-sapn {
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 .filtere-box {
   display: flex;
@@ -69,4 +86,46 @@
 .price-filter-btn {
 }
 .name-filter-btn {
+}
+
+.ditails-btn {
+  align-self: center;
+
+  margin: 8px;
+  padding: 8px 16px;
+  max-width: 320px;
+  background-color: rgb(162, 129, 240);
+}
+
+.layout-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5vw 4vw;
+  background-color: var(--color-bg, #f6f9f9);
+  color: var(--color-text, #222);
+
+  @media (min-width: 768px) {
+    padding: 4vw 6vw;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 1vw 8vw;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--color-bg-dark, #1e1e1e);
+    color: var(--color-text-dark, #eee);
+  }
+}
+
+.layout-content {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
