@@ -1,59 +1,47 @@
-# BudgetAngular
+# Slider App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+## Descripción
 
-## Development server
+Este proyecto es una aplicación de presupuestos desarrollada con Angular 19 utilizando componentes standalone. Permite a los usuarios seleccionar servicios como SEO, publicidad o desarrollo web, personalizar sus opciones, calcular el coste total y guardar múltiples presupuestos. También incluye funcionalidades de búsqueda, ordenación y navegación a detalles mediante URL dinámica.
 
-To start a local development server, run:
+## Tecnologías Utilizadas
 
-```bash
-ng serve
-```
+- **Angular 19**: Framework moderno para el desarrollo de aplicaciones web.
+- **TypeScript**: Lenguaje de programación con tipado estático.
+- **Componentes Standalone**: Nueva funcionalidad de Angular 19 que permite crear componentes sin necesidad de NgModules.
+- **SCSS**: Preprocesador de CSS que permite el uso de variables, anidamiento y otras características avanzadas.
+- **Reactive Forms**: Módulo de Angular para construir formularios reactivos con validaciones y control total del estado.
+- **Angular Signals**: Sistema reactivo moderno para gestionar estado de forma eficiente.
+- **Angular Router**: Navegación dinámica y rutas personalizadas.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Instrucciones de Instalación y Ejecución
 
-## Code scaffolding
+1. Clona el repositorio:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+   - git clone https://github.com/Leoyalta/IT-Academy-Angular-S6-Budget
 
-```bash
-ng generate component component-name
-```
+2. Navega al directorio del proyecto:
+   - cd budget-angular
+3. Instala las dependencias:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+   - npm install
 
-```bash
-ng generate --help
-```
+4. Inicia el servidor de desarrollo:
+   - npm run start
 
-## Building
+## Características Principales
 
-To build the project run:
+- ✅ Selección de servicios: SEO, Ads, y Web.
+- ✅ Configuración personalizada de páginas e idiomas para el servicio Web.
+- ✅ Cálculo dinámico del presupuesto total.
+- ✅ Validación de datos del cliente (nombre, teléfono, email).
+- ✅ Almacenamiento de múltiples presupuestos.
+- ✅ Lista de presupuestos con opciones de búsqueda y ordenación.
+- ✅ Visualización de presupuesto individual mediante URL dinámica.
+- ✅ Interfaz moderna, limpia y responsive.
 
-```bash
-ng build
-```
+## Demo
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Puedes ver el proyecto en acción aquí:
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- https://it-academy-angular-s6-budget.vercel.app
