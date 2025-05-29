@@ -22,28 +22,28 @@ describe('PanelComponent', () => {
   });
 
   it('should initialize form controls', () => {
-    expect(component.webForm.contains('numOfPages')).toBeTrue();
-    expect(component.webForm.contains('numOfLangs')).toBeTrue();
+    expect(component.webForm.contains('pages')).toBeTrue();
+    expect(component.webForm.contains('pages')).toBeTrue();
   });
 
-  it('should increment and decrement numOfPages', () => {
-    const initial = component.webForm.get('numOfPages')!.value || 1;
+  it('should increment and decrement pages', () => {
+    const initial = component.webForm.get('pages')!.value || 1;
 
-    component.increment('numOfPages');
-    expect(component.webForm.get('numOfPages')!.value).toBe(initial + 1);
+    component.increment('pages');
+    expect(component.webForm.get('pages')!.value).toBe(initial + 1);
 
-    component.decrement('numOfPages');
-    expect(component.webForm.get('numOfPages')!.value).toBe(initial);
+    component.decrement('pages');
+    expect(component.webForm.get('pages')!.value).toBe(initial);
   });
 
-  it('should increment and decrement numOfLangs', () => {
-    const initial = component.webForm.get('numOfLangs')!.value || 1;
+  it('should increment and decrement languages', () => {
+    const initial = component.webForm.get('')!.value || 1;
 
-    component.increment('numOfLangs');
-    expect(component.webForm.get('numOfLangs')!.value).toBe(initial + 1);
+    component.increment('languages');
+    expect(component.webForm.get('languages')!.value).toBe(initial + 1);
 
-    component.decrement('numOfLangs');
-    expect(component.webForm.get('numOfLangs')!.value).toBe(initial);
+    component.decrement('languages');
+    expect(component.webForm.get('languages')!.value).toBe(initial);
   });
 
   it('should call openModal on info icon click', () => {
